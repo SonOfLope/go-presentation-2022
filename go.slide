@@ -1,0 +1,94 @@
+Go, you'll thank yourself later
+October 14, 2022
+
+By jonathan Lopez and Thomas Cardin
+
+* Quest-ce que Go ?
+Le Go, ou Golang, est un language de programmation open-source, typé statiquement.
+
+- Lancé en 2009 par Google, le langage a été conçu en s'inspirant de de la simplicité de Python et la capacité de C
+
+Conçu pour résoudre des problèmes tel que :
+    
+- Build time
+- Dépendances incontrôlées
+- Difficulté dans le développement inter-langage
+
+.image img/gopher.jpg
+
+: langage typé statiquement; si le type d'une variable est connu au moment de la compilation avantage ; compilateur peut faire toutes sortes de vérifications qui permet détecter des bogues triviaux plus tôt
+
+* Hello, World!
+
+.play src/hello.go
+
+
+* Concurrency
+
+Go fait l'utilisation de ''goroutines'' et des ''channels'' qui permettent de faire du multi-threading.
+
+- process : programme qui se fait chargé en mémoire avec toutes ces ressources pour fonctionner
+
+: process est ce qu'on appelle un programme qu'on peut éxecuter et qui se fait chargé en mémoire avec toutes ces ressources pour fonctionner, souvent on va avoir besoin de threads pour pouvoir accomplir des tâches en même temps
+
+: un process peut avoir plusieurs threads et l'avantage c'est que 
+
+.image img/processThreads.jpg 
+
+* Concurrency
+
+*Multithreading:*
+
+- avantage : les threads partage le même espace memoire que le process
+- désavantage : Si un problème occure dans un thread du process, il va affecter les autres threads.
+
+.image img/processThreads.jpg 
+
+* Concurrency
+
+- Goroutines : Planifiées de manière coopérative, plutôt que de s'appuyer sur le kernel pour gérer le temps qu'ils se partagent.
+
+- "switch" entre goroutines arrive seulement à des moments défini, lorsqu'un appel explicite est fait.
+
+- Channel : Mechanisme de communication qui permet a une goroutine d'envoyer des valeurs à une autre goroutine.
+
+: go pousse cette idée un peu plus loin
+
+: Un channel est un lien entre les activités des goroutines. C'est techniquement un canal de transfert de données pouvant être transmises ou lues  
+
+.image img/concurrencyVsParallelism.jpg 
+
+* Demonstration
+
+c <- data : "Push" data dans le channel c
+<- c : lire des données de c
+.play src/channels.go
+
+* Package management
+
+- Go modules : Projet contenant la collection des packages qui sont des dépendances requises.
+
+- semi-decentralisé : Permet à n'importe quel repo git d'être utilisé comme un module
+
+`go.mod` : Fichier qui definit le nom du module de notre projet, la version de go qui build le projet et une liste de dépendances
+`go.sum` : Fichier autogénéré contenant les hashs cryptographique des dépendances directe/indirecte de notre module.
+
+: go mod vendor = quand tu vendor tes dependances, tu peux build le projet sans avoir un acces internet
+
+.image img/goModuleCommands.png
+
+* Bénéfices & désavantages
+- Static build : Pas besoin d'installer this or that pour exécuter une application (nodejs)
+- Automatic garbage collection
+- Minimaliste 
+- Installation est simple, compile facilement, facile à tester, facile à adopter
+
+: La spécification formelle du langage Go ne compte que 50 pages, contient de nombreux exemples et est assez facile à lire.
+
+.image /img/neo.jpg 300 300 
+
+
+
+
+
+
