@@ -8,7 +8,7 @@ Le Go, ou Golang, est un language de programmation open-source, typé statiqueme
 
 - Lancé en 2009 par Google, le langage a été conçu en s'inspirant de de la simplicité de Python et la capacité de C
 
-Conçu pour résoudre des problèmes tel que :
+Conçu pour résoudre des problèmes à l'interne tel que :
     
 - Build time
 - Dépendances incontrôlées
@@ -21,7 +21,6 @@ Conçu pour résoudre des problèmes tel que :
 * Hello, World!
 
 .play src/hello.go
-
 
 * Concurrency
 
