@@ -1,7 +1,7 @@
-Go, you'll thank yourself later
-October 14, 2022
+Golang, let's GO!
+14 octobre  2022
 
-By jonathan Lopez and Thomas Cardin
+Présenté par Jonathan Lopez et Thomas Cardin
 
 * Quest-ce que Go ?
 Le Go, ou Golang, est un language de programmation open-source, typé statiquement.
@@ -12,15 +12,20 @@ Conçu pour résoudre des problèmes à l'interne tel que :
     
 - Build time
 - Dépendances incontrôlées
-- Difficulté dans le développement inter-langage
 
 .image img/gopher.jpg
-
-: langage typé statiquement; si le type d'une variable est connu au moment de la compilation avantage ; compilateur peut faire toutes sortes de vérifications qui permet détecter des bogues triviaux plus tôt
 
 * Hello, World!
 
 .play src/hello.go
+
+go run hello-world.go
+
+go build hello-world.go
+
+: le package permet de rendre l'application modulaire lorsque l'on veut le rendre executable
+
+: par convention, le fichier qui doit executer le programme doit utiliser l'identifiant main qui permet a la commande go build de construire l'executable
 
 * Concurrency
 
@@ -30,13 +35,13 @@ Go fait l'utilisation de ''goroutines'' et des ''channels'' qui permettent de fa
 
 : process est ce qu'on appelle un programme qu'on peut éxecuter et qui se fait chargé en mémoire avec toutes ces ressources pour fonctionner, souvent on va avoir besoin de threads pour pouvoir accomplir des tâches en même temps
 
-: un process peut avoir plusieurs threads et l'avantage c'est que 
+: On peut le visualiser comme si je prepare mon déjeuner le matin, je repond au telephone et je boit du café
 
 .image img/processThreads.jpg 
 
 * Concurrency
 
-*Multithreading:*
+*Parrallélisme:*
 
 - avantage : les threads partage le même espace memoire que le process
 - désavantage : Si un problème occure dans un thread du process, il va affecter les autres threads.
@@ -50,8 +55,6 @@ Go fait l'utilisation de ''goroutines'' et des ''channels'' qui permettent de fa
 - "switch" entre goroutines arrive seulement à des moments défini, lorsqu'un appel explicite est fait.
 
 - Channel : Mechanisme de communication qui permet a une goroutine d'envoyer des valeurs à une autre goroutine.
-
-: go pousse cette idée un peu plus loin
 
 : Un channel est un lien entre les activités des goroutines. C'est techniquement un canal de transfert de données pouvant être transmises ou lues  
 
@@ -77,17 +80,13 @@ c <- data : "Push" data dans le channel c
 .image img/goModuleCommands.png
 
 * Bénéfices & désavantages
-- Static build : Pas besoin d'installer this or that pour exécuter une application (nodejs)
-- Automatic garbage collection
+- Static build 
+- Garbage collection automatisé
 - Minimaliste 
 - Installation est simple, compile facilement, facile à tester, facile à adopter
 
 : La spécification formelle du langage Go ne compte que 50 pages, contient de nombreux exemples et est assez facile à lire.
 
+: static build : pas besoin d'installer this or that pour exécuter une application style nodejs
+
 .image /img/neo.jpg 300 300 
-
-
-
-
-
-
